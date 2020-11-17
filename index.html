@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <style>
+      .wall {
+        height: 30px;
+        width: 30px;
+        background-color: grey;
+      }
+      .entrance {
+        height: 30px;
+        width: 30px;
+        background-color: blue;
+      }
+      .exit {
+        height: 30px;
+        width: 30px;
+        background-color: red;
+      }
+      .path {
+        height: 30px;
+        width: 30px;
+      }
+      .row {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
-
-    <script src="constants.js"></script>
+    <div id="maze-container" style="border: thin solid grey;"></div>
+    </div>
+    <script src="controller.js" type="module"></script>
+      
+    
+    <!-- <script src="constants.js"></script>
     <script src="generator.js"></script>
+    <script src="controller.js"></script>
+    <script src="presenter.js"></script> -->
   </body>
 </html>

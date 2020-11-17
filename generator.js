@@ -1,3 +1,5 @@
+import {PATH, WALL, ENTRANCE, EXIT} from './constants.js';
+
 function getRandomCell(rowsNumber, columnsNumber) {
   let row = Math.floor(Math.random() * rowsNumber);
   row === rowsNumber ? row - 1 : row;
@@ -12,7 +14,7 @@ function getPathOrWall() {
   return Math.random() > 0.5 ? PATH : WALL;
 }
 
-function generateLabyrinth(rowsNumber, columnsNumber) {
+export function generateLabyrinth(rowsNumber, columnsNumber) {
   const labyrinth = [];
   for (let raw = 0; raw < rowsNumber; raw++) {
     labyrinth[raw] = [];
@@ -38,7 +40,7 @@ function generateLabyrinth(rowsNumber, columnsNumber) {
     for (let column = 0; column < columnsNumber; column++) {
       if (
         labyrinth[raw][column] === 0
-        ) {
+      ) {
         labyrinth[raw][column] = getPathOrWall();
       }
     }
@@ -46,6 +48,3 @@ function generateLabyrinth(rowsNumber, columnsNumber) {
 
   return labyrinth
 }
-
-const lab = generateLabyrinth(2, 3);
-console.log(lab);
